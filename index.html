@@ -3,46 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ket | Tarotista de Desarrollo Personal</title>
-<meta name="description" content="Ket, narradora digital y tarotista de desarrollo personal. Lecturas con Star Spinner Tarot y Oráculo Etéreo para claridad, decisiones y crecimiento personal.">
+<title>Ket | Tarot narrativo</title>
+<meta name="description" content="Ket, narradora digital y tarotista narrativa. Lecturas con Star Spinner Tarot, Tarot de lo Divino y Oráculo Etéreo para entender tu historia con más claridad.">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#1a1614">
+<meta name="theme-color" content="#05030b">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Ket | Tarotista de Desarrollo Personal">
-<meta property="og:description" content="Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal.">
+<meta property="og:title" content="Ket | Tarot narrativo">
+<meta property="og:description" content="Lecturas de tarot para entender tu historia, recorrer tus arcanos y mirar tu proceso con más claridad.">
 <meta property="og:locale" content="es_CO">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Ket | Tarotista de Desarrollo Personal">
-<meta name="twitter:description" content="Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal.">
+<meta name="twitter:title" content="Ket | Tarot narrativo">
+<meta name="twitter:description" content="Lecturas de tarot para entender tu historia, recorrer tus arcanos y mirar tu proceso con más claridad.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
   :root {
-    --ink: #1a1614;
-    --bone: #f5f0e8;
-    --sand: #e8ddd0;
-    --sage: #8a9b8a;
+    --ink: #05030b;
+    --bone: #f7f2ff;
+    --sand: #27162f;
+    --cream: #120819;
     --purple: #5c1b6c;
-    --purple-light: #c084d4;
-    --purple-soft: rgba(92,27,108,0.13);
-    --purple-glow: rgba(92,27,108,0.08);
-    --purple: #5c1b6c;
-    --purple-light: rgba(92,27,108,0.12);
-    --purple-muted: rgba(92,27,108,0.07);
-    --terracota: #b5705a;
-    --gold: #c9a96e;
-    --muted: #6b5f58;
-    --cream: #faf7f2;
+    --violet: #7a3c8c;
+    --lilac: #d8b7e6;
+    --neon-pink: #ff5fa2;
+    --deep-blue: #0b1025;
+    --gold: #f3c98b;
+    --muted: #cbb4da;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
+
   body {
-    font-family: 'Jost', sans-serif;
-    background: var(--cream);
-    color: var(--ink);
+    font-family: "Jost", sans-serif;
+    background: radial-gradient(ellipse at top, #2a1242 0%, #05030b 60%, #020108 100%);
+    color: var(--bone);
     font-weight: 300;
     line-height: 1.7;
     overflow-x: hidden;
@@ -67,10 +64,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(250,247,242,0.88);
+    background: rgba(7,5,18,0.88);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(201,169,110,0.15);
+    border-bottom: 1px solid rgba(243,201,139,0.15);
   }
 
   .nav-logo {
@@ -78,7 +75,7 @@
     font-size: 1.02rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-    color: var(--ink);
+    color: var(--bone);
     text-decoration: none;
   }
 
@@ -138,10 +135,10 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,169,110,0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(181,112,90,0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(92,27,108,0.07) 0%, transparent 60%),
-      var(--cream);
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(255,95,162,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(122,60,140,0.25) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 45% at 5% 95%, rgba(61,143,255,0.22) 0%, transparent 60%),
+      var(--deep-blue);
   }
 
   .hero-ornament {
@@ -151,7 +148,7 @@
     transform: translate(-50%, -50%);
     width: min(600px, 90vw);
     height: min(600px, 90vw);
-    border: 1px solid rgba(92,27,108,0.15);
+    border: 1px solid rgba(92,27,108,0.2);
     border-radius: 50%;
     pointer-events: none;
   }
@@ -160,7 +157,7 @@
     content: '';
     position: absolute;
     inset: 20px;
-    border: 1px solid rgba(92,27,108,0.1);
+    border: 1px solid rgba(243,201,139,0.12);
     border-radius: 50%;
   }
 
@@ -197,14 +194,14 @@
     font-size: clamp(3rem, 10vw, 5.5rem);
     font-weight: 300;
     line-height: 1.1;
-    color: var(--ink);
+    color: var(--bone);
     margin-bottom: 1.4rem;
     letter-spacing: -0.01em;
   }
 
   h1 em {
     font-style: italic;
-    color: var(--terracota);
+    color: var(--neon-pink);
   }
 
   .hero-sub {
@@ -223,7 +220,7 @@
   }
 
   .btn-primary {
-    background: var(--ink);
+    background: linear-gradient(135deg, var(--neon-pink), var(--violet));
     color: var(--bone);
     padding: 0.9rem 2.2rem;
     text-decoration: none;
@@ -235,26 +232,26 @@
   }
 
   .btn-primary:hover {
-    background: var(--purple);
+    background: linear-gradient(135deg, var(--violet), var(--neon-pink));
     transform: translateY(-1px);
   }
 
   .btn-secondary {
     background: transparent;
-    color: var(--ink);
+    color: var(--lilac);
     padding: 0.9rem 2.2rem;
     text-decoration: none;
     font-size: 0.78rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    border: 1px solid rgba(26,22,20,0.25);
+    border: 1px solid rgba(216,183,230,0.7);
     transition: border-color 0.3s, color 0.3s;
     display: inline-block;
   }
 
   .btn-secondary:hover {
-    border-color: var(--purple);
-    color: var(--purple);
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
   }
 
   .scroll-hint {
@@ -308,14 +305,16 @@
     font-size: clamp(2rem, 6vw, 3.2rem);
     font-weight: 400;
     line-height: 1.2;
-    color: var(--ink);
+    color: var(--bone);
     margin-bottom: 1.6rem;
   }
 
-  h2 em { font-style: italic; color: var(--terracota); }
+  h2 em { font-style: italic; color: var(--neon-pink); }
 
   #sobre {
-    background: var(--ink);
+    background: radial-gradient(circle at top left, rgba(255,95,162,0.12), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(61,143,255,0.18), transparent 60%),
+                #05030b;
     color: var(--bone);
   }
 
@@ -382,7 +381,7 @@
   #enfoque {
     background:
       radial-gradient(ellipse 80% 50% at 20% 50%, rgba(138,155,138,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 60% at 90% 50%, rgba(92,27,108,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 90% 50%, rgba(122,60,140,0.09) 0%, transparent 60%),
       var(--cream);
   }
 
@@ -474,7 +473,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--purple), var(--gold), var(--terracota));
+    background: linear-gradient(90deg, var(--purple), var(--gold), var(--neon-pink));
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s;
@@ -514,7 +513,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.4rem;
     font-weight: 500;
-    color: var(--terracota);
+    color: var(--neon-pink);
   }
 
   .lectura-badge {
@@ -590,7 +589,7 @@
   }
 
   .agenda-box strong {
-    color: var(--ink);
+    color: var(--bone);
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.05rem;
   }
@@ -637,7 +636,7 @@
   }
 
   .para-quien-list li:hover {
-    border-color: var(--purple-light);
+    border-color: var(--neon-pink);
     color: var(--bone);
   }
 
@@ -667,7 +666,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.15rem;
     font-weight: 500;
-    color: var(--ink);
+    color: var(--bone);
     transition: color 0.3s;
   }
 
@@ -794,7 +793,7 @@
     display: block;
     width: 20px;
     height: 1px;
-    background: var(--ink);
+    background: var(--bone);
     transition: all 0.3s;
   }
 
@@ -878,8 +877,9 @@
 </style>
 </head>
 <body>
+
 <nav>
-  <a href="#hero" class="nav-logo">Ket <span>| tarotista de desarrollo personal</span></a>
+  <a href="#hero" class="nav-logo">Ket <span>| tarot narrativo</span></a>
   <ul class="nav-links">
     <li><a href="#sobre">Sobre mí</a></li>
     <li><a href="#lecturas">Lecturas</a></li>
@@ -906,12 +906,15 @@
   <div class="hero-bg"></div>
   <div class="hero-ornament"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Tarot de desarrollo personal</p>
-    <h1>El tarot como<br><em>espejo de quien eres</em></h1>
-    <p class="hero-sub">Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal. Un espacio íntimo para leer tu historia con honestidad y dirección.</p>
+    <p class="hero-eyebrow">Tarot narrativo</p>
+    <h1>El tarot como<br><em>espejo de tu energía</em></h1>
+    <p class="hero-sub">
+      No vengo a adivinarte el futuro, sino a leer la forma en la que tu energía se mueve hoy: dónde se enreda, dónde insiste, dónde pide un cambio. Leemos tu vida como una historia: tú en el centro, los arcanos alrededor, sosteniendo la escena.
+    </p>
     <div class="hero-btns">
       <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary" target="_blank" rel="noopener noreferrer">Reserva tu espacio</a>
       <a href="#lecturas" class="btn-secondary">Ver lecturas</a>
+      <a href="https://wa.me/573144268970" class="btn-secondary" target="_blank" rel="noopener noreferrer">Q/A por WhatsApp</a>
     </div>
   </div>
   <div class="scroll-hint">
@@ -927,19 +930,19 @@
     <div class="sobre-grid">
       <div class="reveal">
         <div class="foto-wrapper">
-          <img src="./ket-photo.jpg" alt="Retrato de Ket, narradora digital y tarotista de desarrollo personal" class="foto-real" width="1080" height="1440" loading="lazy">
+          <img src="./ket-photo.jpg" alt="Retrato de Ket, narradora digital y tarotista" class="foto-real" width="1080" height="1440" loading="lazy">
         </div>
       </div>
 
       <div class="sobre-text reveal">
         <p class="section-label">Sobre mí</p>
         <h2>Soy Ket,<br><em>narradora y tarotista</em></h2>
-        <p>Desde hace cuatro años acompaño a personas que buscan dirección, claridad y una mirada más profunda sobre sus procesos de vida. Soy narradora digital antes que cualquier otra cosa, y eso define la forma en la que leo.</p>
-        <p>Me apasiona conocer a alguien a través del tarot: cada lectura revela una narrativa íntima sobre quién eres, qué estás atravesando y hacia dónde puede dirigirse tu energía. Mi estilo es terapéutico, intuitivo y orientado al crecimiento personal.</p>
-        <p>Las personas que llegan a mí no le temen a la verdad. Buscan verse con honestidad, comprender su momento y tomar acción desde ese lugar.</p>
+        <p>Desde hace cuatro años acompaño a personas que buscan claridad, dirección y una mirada más profunda sobre lo que están viviendo. Soy narradora digital y esa manera de mirar el mundo se filtra en todo: también en cómo leo el tarot.</p>
+        <p>En cada lectura pienso en quien se sienta frente a mí como en la protagonista de una película: hay escenas que duelen, escenas que empujan, escenas que piden un corte y empezar de nuevo. Los arcanos son el guion secreto de esa historia; el recorrido de El Loco es el mapa de ese viaje.</p>
+        <p>Mi trabajo es leer esa trama con cuidado: ver dónde se repite una dinámica, dónde se abre una puerta, dónde la vida te está pidiendo una decisión. Las personas que llegan a mí no le temen a la verdad: quieren entender su historia con más honestidad y moverse a partir de eso.</p>
         <div class="divider"><span class="divider-sym">✦</span></div>
         <blockquote class="sello">
-          “No leo solo cartas: leo historias, procesos y verdades que buscan movimiento.”
+          “No leo solo cartas: leo escenas, decisiones y silencios que, a veces, dicen más que cualquier pronóstico.”
         </blockquote>
       </div>
     </div>
@@ -949,7 +952,7 @@
 <section id="enfoque">
   <div class="section-inner">
     <p class="section-label reveal">Mi enfoque</p>
-    <h2 class="reveal">Una lectura con<br><em>intención y profundidad</em></h2>
+    <h2 class="reveal">Una lectura con<br><em>narrativa y profundidad</em></h2>
     <div class="enfoque-grid">
       <div class="enfoque-card reveal">
         <div class="enfoque-icon">✦</div>
@@ -964,7 +967,7 @@
       <div class="enfoque-card reveal">
         <div class="enfoque-icon">◌</div>
         <h3>Enfoque terapéutico</h3>
-        <p>Mis lecturas no buscan sentenciar el futuro. Leen la energía del momento y ofrecen orientación para tomar decisiones con más claridad, consciencia y presencia.</p>
+        <p>Mis lecturas no buscan sentenciar el futuro. Leen la energía del momento, conectan con la historia que estás atravesando y ofrecen orientación para tomar decisiones con más claridad, consciencia y presencia.</p>
       </div>
     </div>
   </div>
@@ -997,7 +1000,7 @@
       <div class="lectura-card reveal">
         <div class="lectura-name">3 aspectos de vida en el tiempo</div>
         <div class="lectura-desc">Tres áreas de tu vida exploradas en sus tres momentos: de dónde vienes, dónde estás y hacia dónde se dirige tu energía.</div>
-        <div class="lectura-price">$20.000</div>
+        <div class="lectura-price">$40.000</div>
       </div>
 
       <div class="lectura-card featured reveal">
@@ -1040,7 +1043,7 @@
       </div>
     </div>
     <div class="agenda-box reveal">
-      <p><strong>¿Cómo agendo?</strong><br>Reserva tu espacio directamente en mi calendario. Allí podrás ver disponibilidad, elegir el horario que mejor te funcione y confirmar tu sesión.</p>
+      <p><strong>¿Cómo agendo?</strong><br>Reserva tu espacio directamente en mi calendario. Allí podrás ver disponibilidad, elegir el horario que mejor te funcione y confirmar tu sesión. Si tienes preguntas rápidas, también puedes escribirme por WhatsApp.</p>
     </div>
   </div>
 </section>
@@ -1111,20 +1114,22 @@
   <div class="section-inner">
     <p class="section-label reveal" style="justify-content: center;"><span></span>Tu momento<span></span></p>
     <h2 class="reveal">¿Lista para<br><em>leer tu historia?</em></h2>
-    <p class="reveal">Tu lectura te espera: un espacio íntimo, honesto y diseñado para ti. Porque la claridad a veces necesita un momento para ser escuchada.</p>
+    <p class="reveal">Tu lectura te espera: un espacio íntimo, honesto y diseñado para ti. A veces comprender tu historia es el primer paso para transformarla.</p>
     <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary reveal" target="_blank" rel="noopener noreferrer" style="display: inline-block;">Reserva tu espacio</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-brand">Ket | tarotista de desarrollo personal</div>
+  <div class="footer-brand">Ket | tarot narrativo</div>
   <div style="margin-top: 0.8rem;">
     <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">Reservas</a>
+    <span class="footer-sep">·</span>
+    <a href="https://wa.me/573144268970" target="_blank" rel="noopener noreferrer">WhatsApp</a>
     <span class="footer-sep">·</span>
     <a href="https://www.instagram.com/_ket._.ket_/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a>
   </div>
   <div style="margin-top: 1rem; font-size: 0.72rem; opacity: 0.4;">
-    © 2026 Ket · Lecturas de tarot para el crecimiento personal
+    © 2026 Ket · Lecturas de tarot para leer tu historia con claridad
   </div>
 </footer>
 
