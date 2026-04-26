@@ -41,7 +41,8 @@
     background: radial-gradient(ellipse at top, #2a1242 0%, #05030b 60%, #020108 100%);
     color: var(--bone);
     font-weight: 300;
-    line-height: 1.7;
+    line-height: 1.8;
+    font-size: 16px;
     overflow-x: hidden;
   }
 
@@ -93,7 +94,7 @@
   .nav-links a {
     text-decoration: none;
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     transition: color 0.3s;
@@ -102,7 +103,7 @@
   .nav-links a:hover { color: var(--gold); }
 
   .nav-cta {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     background: var(--ink);
@@ -197,7 +198,7 @@
   }
 
   .hero-eyebrow {
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
@@ -220,12 +221,12 @@
 
   h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-size: clamp(3.4rem, 10vw, 5.8rem);
     font-weight: 300;
     line-height: 1.1;
     color: var(--bone);
     margin-bottom: 1.4rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.03em;
   }
 
   h1 em {
@@ -234,11 +235,12 @@
   }
 
   .hero-sub {
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
     color: var(--muted);
     max-width: 520px;
     margin: 0 auto 2.8rem;
     font-weight: 300;
+    letter-spacing: 0.01em;
   }
 
   .hero-btns {
@@ -253,7 +255,7 @@
     color: var(--bone);
     padding: 0.9rem 2.2rem;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     transition: background 0.3s, transform 0.2s;
@@ -270,7 +272,7 @@
     color: var(--lilac);
     padding: 0.9rem 2.2rem;
     text-decoration: none;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     border: 1px solid rgba(216,183,230,0.7);
@@ -310,7 +312,7 @@
   .section-inner { max-width: 960px; margin: 0 auto; }
 
   .section-label {
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--gold);
@@ -331,11 +333,12 @@
 
   h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
     font-weight: 400;
     line-height: 1.2;
     color: var(--bone);
     margin-bottom: 1.6rem;
+    letter-spacing: 0.02em;
   }
 
   h2 em { font-style: italic; color: var(--neon-pink); }
@@ -367,43 +370,56 @@
 
   .foto-wrapper {
     position: relative;
-    aspect-ratio: 3/4;
+    aspect-ratio: 3 / 5;
     max-width: 320px;
     margin: 0 auto;
+    border-radius: 18px;
+    background: radial-gradient(circle at top, #2f123a, #05030b);
+    border: 2px solid rgba(247,242,255,0.9);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.7);
+    overflow: hidden;
+    transition: box-shadow 0.45s ease, transform 0.45s ease;
   }
 
   .foto-wrapper::before {
     content: "";
     position: absolute;
-    inset: -8%;
-    border-radius: 999px;
+    inset: -12%;
+    border-radius: 30px;
     background: radial-gradient(circle at 30% 10%, rgba(255,95,162,0.25), transparent 60%),
                 radial-gradient(circle at 70% 90%, rgba(122,60,140,0.35), transparent 70%);
-    opacity: 0.7;
+    opacity: 0.6;
     mix-blend-mode: screen;
     pointer-events: none;
+  }
+
+  .foto-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(216,183,230,0.8);
+    box-shadow: 0 0 0 1px rgba(5,3,11,0.9) inset;
+    pointer-events: none;
+  }
+
+  .foto-wrapper:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.8);
+  }
+
+  .foto-wrapper:hover::after {
+    box-shadow:
+      0 0 18px rgba(255,95,162,0.55),
+      0 0 0 1px rgba(5,3,11,0.9) inset;
   }
 
   .foto-real {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border: 1px solid rgba(201,169,110,0.2);
-    filter: saturate(0.95) contrast(1.02);
-  }
-
-  .foto-wrapper:hover .foto-real {
-    filter: saturate(1.1) contrast(1.07);
-  }
-
-  .foto-wrapper::after {
-    content: '';
-    position: absolute;
-    bottom: -12px;
-    right: -12px;
-    inset: 12px -12px -12px 12px;
-    border: 1px solid rgba(201,169,110,0.2);
-    z-index: -1;
+    border: none;
+    filter: saturate(0.98) contrast(1.03);
   }
 
   .sobre-text p {
@@ -412,15 +428,26 @@
     font-size: 1rem;
   }
 
+  .sobre-text p:first-of-type::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    float: left;
+    line-height: 1;
+    padding-right: 0.4rem;
+    padding-top: 0.2rem;
+    color: var(--neon-pink);
+  }
+
   .sello {
     margin-top: 2rem;
     padding: 1.4rem 1.8rem;
     border-left: 2px solid var(--gold);
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     font-style: italic;
     color: var(--bone);
     line-height: 1.5;
+    letter-spacing: 0.04em;
   }
 
   #enfoque {
@@ -452,57 +479,66 @@
     color: var(--bone);
     transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     position: relative;
-  }
-
-  .enfoque-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.7rem;
-    color: var(--bone);
-  }
-
-  .enfoque-card p {
-    font-size: 0.92rem;
-    color: rgba(247,242,255,0.78);
-    line-height: 1.7;
-  }
-
-  .enfoque-icon {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.8rem;
-    position: relative;
-  }
-
-  .enfoque-icon::after {
-    content: "";
-    position: absolute;
-    inset: -8px;
-    border-radius: 999px;
-    border: 1px solid rgba(243,201,139,0.4);
-    opacity: 0;
-    transition: opacity 0.4s;
-  }
-
-  .enfoque-card:hover .enfoque-icon::after {
-    opacity: 1;
+    transform-origin: center bottom;
+    transform: perspective(900px) rotateX(5deg);
   }
 
   .enfoque-card:hover {
     border-color: var(--neon-pink);
-    transform: translateY(-3px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    transform: perspective(900px) rotateX(0deg) translateY(-6px);
+    box-shadow: 0 26px 55px rgba(0,0,0,0.65);
+  }
+
+  .enfoque-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.65rem 1.1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(247,242,255,0.35);
+    background: radial-gradient(circle at 0% 0%, rgba(255,95,162,0.18), transparent 70%);
+    margin-bottom: 1.1rem;
+  }
+
+  .enfoque-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+  }
+
+  .enfoque-header h3 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+  }
+
+  .enfoque-card p {
+    font-size: 0.98rem;
+    color: rgba(247,242,255,0.78);
+    line-height: 1.7;
   }
 
   /* Imágenes para barajas y enfoque */
   .enfoque-image {
+    position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    border-radius: 10px;
+    border-radius: 18px;
     overflow: hidden;
     margin-bottom: 1.2rem;
-    border: 1px solid rgba(247,242,255,0.18);
+    background: radial-gradient(circle at top, #2f123a, #05030b);
+    border: 2px solid rgba(247,242,255,0.9);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  }
+
+  .enfoque-image::before {
+    content: "";
+    position: absolute;
+    inset: 8px;
+    border-radius: 12px;
+    border: 1px solid rgba(216,183,230,0.7);
+    box-shadow: 0 0 0 1px rgba(5,3,11,0.8) inset;
+    pointer-events: none;
   }
 
   .enfoque-image img {
@@ -559,6 +595,9 @@
   }
 
   .lectura-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: var(--cream);
     padding: 1.8rem;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -581,11 +620,6 @@
 
   .lectura-card:hover::before { transform: scaleX(1); }
 
-  .lectura-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 32px rgba(26,22,20,0.08);
-  }
-
   .lectura-card.featured {
     background: var(--ink);
     color: var(--bone);
@@ -596,14 +630,14 @@
 
   .lectura-name {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
     margin-bottom: 0.6rem;
     line-height: 1.3;
   }
 
   .lectura-desc {
-    font-size: 0.85rem;
+    font-size: 0.98rem;
     color: var(--muted);
     line-height: 1.6;
     margin-bottom: 1.2rem;
@@ -618,13 +652,42 @@
 
   .lectura-badge {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: 0.75rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     background: var(--gold);
     color: var(--ink);
     padding: 0.2rem 0.6rem;
     margin-bottom: 0.8rem;
+  }
+
+  /* efectos carta + estrellas en lecturas */
+  #lecturas .lectura-card {
+    transform-origin: center bottom;
+    transform: perspective(900px) rotateX(4deg);
+  }
+
+  #lecturas .lectura-card:hover {
+    transform: perspective(900px) rotateX(0deg) translateY(-6px);
+    box-shadow: 0 26px 60px rgba(0,0,0,0.7);
+  }
+
+  #lecturas .lectura-card::after {
+    content: "";
+    position: absolute;
+    inset: -10%;
+    background-image:
+      radial-gradient(2px 2px at 10% 15%, rgba(255,255,255,0.65) 0, transparent 55%),
+      radial-gradient(2px 2px at 80% 20%, rgba(215,183,255,0.7) 0, transparent 55%),
+      radial-gradient(2px 2px at 20% 85%, rgba(255,255,255,0.6) 0, transparent 55%),
+      radial-gradient(2px 2px at 90% 70%, rgba(255,95,162,0.55) 0, transparent 55%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+
+  #lecturas .lectura-card:hover::after {
+    opacity: 1;
   }
 
   /* Aprende */
@@ -682,14 +745,20 @@
 
   .modalidad-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
+    font-size: 4.4rem;
     font-weight: 300;
-    color: rgba(201,169,110,0.15);
+    color: rgba(201,169,110,0.35);
     position: absolute;
-    top: 1rem;
-    right: 1.5rem;
+    top: 0.6rem;
+    right: 1.2rem;
     line-height: 1;
     pointer-events: none;
+    text-shadow: 0 0 14px rgba(5,3,11,0.8);
+    letter-spacing: 0.08em;
+  }
+
+  .modalidad-box:hover .modalidad-num {
+    color: rgba(243,201,139,0.65);
   }
 
   .modalidad-box h3 {
@@ -700,7 +769,7 @@
   }
 
   .modalidad-box p {
-    font-size: 0.92rem;
+    font-size: 0.98rem;
     color: var(--muted);
     line-height: 1.7;
   }
@@ -713,7 +782,7 @@
   }
 
   .agenda-box p {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--muted);
   }
 
@@ -830,7 +899,7 @@
 
   .faq-a-inner {
     padding-bottom: 1.4rem;
-    font-size: 0.95rem;
+    font-size: 0.98rem;
     color: var(--muted);
     line-height: 1.8;
     max-width: 620px;
@@ -1091,24 +1160,30 @@
     <div class="enfoque-grid">
 
       <div class="enfoque-card reveal">
-        <div class="enfoque-icon">✦</div>
-        <h3>Presentarnos y abrir el espacio</h3>
+        <div class="enfoque-header">
+          <span class="enfoque-icon">✦</span>
+          <h3>Presentarnos y abrir el espacio</h3>
+        </div>
         <p>
           Empiezo siempre por lo básico: quién eres, qué estás viviendo, qué te trae hasta aquí. Presento las barajas con las que trabajo —Star Spinner Tarot, Tarot de lo Divino y el Oráculo Etéreo— y marco la intención de la sesión: mirar tu historia con honestidad.
         </p>
       </div>
 
       <div class="enfoque-card reveal">
-        <div class="enfoque-icon">◈</div>
-        <h3>Barajar, afinar la pregunta</h3>
+        <div class="enfoque-header">
+          <span class="enfoque-icon">◈</span>
+          <h3>Barajar, afinar la pregunta</h3>
+        </div>
         <p>
           Mientras barajo, dejamos que la pregunta se aclare. A veces llega en bruto y, conversando, la vamos afinando hasta que tenga el peso justo: lo bastante concreta para que la lectura sea precisa, lo bastante abierta para que pueda sorprenderte.
         </p>
       </div>
 
       <div class="enfoque-card reveal">
-        <div class="enfoque-icon">◌</div>
-        <h3>Tirada, relato y cierre</h3>
+        <div class="enfoque-header">
+          <span class="enfoque-icon">◌</span>
+          <h3>Tirada, relato y cierre</h3>
+        </div>
         <p>
           Definimos la tirada y empiezo a revelar carta por carta, uniendo puntos entre lo que aparece en la mesa y lo que cuentas. Al final, el Oráculo Etéreo ofrece una imagen de cierre: una frase, un gesto, una acción posible para llevarte contigo cuando se apaga la videollamada.
         </p>
@@ -1125,7 +1200,7 @@
 
     <div class="cards-grid">
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://TU_LINK_STAR_SPINNER" target="_blank" rel="noopener noreferrer">
         <div class="enfoque-image">
           <img src="./star-spinner.jpg" alt="Star Spinner Tarot sobre la mesa" loading="lazy">
         </div>
@@ -1133,27 +1208,27 @@
         <div class="lectura-desc">
           Un mazo de mundos diversos, colores suaves y símbolos que parecen sacados de un sueño. Lo uso cuando necesitamos una mirada sensible, casi cinematográfica, sobre lo que estás viviendo.
         </div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://TU_LINK_TAROT_DIVINO" target="_blank" rel="noopener noreferrer">
         <div class="enfoque-image">
           <img src="./tarot-divino.jpg" alt="Tarot de lo Divino, edición en español" loading="lazy">
         </div>
         <div class="lectura-name">Tarot de lo Divino</div>
         <div class="lectura-desc">
-          Relee los arcanos a través de mitos y cuentos. Me ayuda a ubicar tu historia dentro de relatos más grandes: héroes, caídas y renacimientos que se parecen mucho a lo que estás atravesando.[web:110]
+          Relee los arcanos a través de mitos y cuentos. Me ayuda a ubicar tu historia dentro de relatos más grandes: héroes, caídas y renacimientos que se parecen mucho a lo que estás atravesando.
         </div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://TU_LINK_ORACULO_ETEREO" target="_blank" rel="noopener noreferrer">
         <div class="enfoque-image">
           <img src="./oraculo-etereo.jpg" alt="Oráculo Etéreo usado como carta de cierre" loading="lazy">
         </div>
         <div class="lectura-name">Oráculo Etéreo</div>
         <div class="lectura-desc">
-          Es la carta que cierra la sesión. Una imagen, una frase o un gesto concreto para llevarte a la vida diaria cuando se termina la lectura y empieza de nuevo tu historia fuera de la pantalla.[web:121]
+          Es la carta que cierra la sesión. Una imagen, una frase o un gesto concreto para llevarte a la vida diaria cuando se termina la lectura y empieza de nuevo tu historia fuera de la pantalla.
         </div>
-      </div>
+      </a>
 
     </div>
   </div>
@@ -1165,49 +1240,49 @@
     <h2 class="reveal">Lecturas <em>y tarifas</em></h2>
     <p class="lecturas-intro reveal">Cada lectura es un espacio diseñado para ti. Elige la que mejor acompañe lo que hoy necesitas mirar.</p>
     <div class="cards-grid">
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Tirada de 1 carta</div>
         <div class="lectura-desc">Una pregunta, una respuesta directa. Ideal para momentos en los que necesitas claridad inmediata sobre una situación concreta.</div>
         <div class="lectura-price">$5.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Aclaración de 2 cartas</div>
         <div class="lectura-desc">Dos perspectivas que dialogan entre sí. Para cuando una sola carta no basta y quieres una lectura más amplia del momento.</div>
         <div class="lectura-price">$5.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Pasado, presente, futuro y tú</div>
         <div class="lectura-desc">Una lectura que ubica tu situación en el tiempo y te pone en el centro de tu propia historia. Cuatro cartas, una visión clara del proceso.</div>
         <div class="lectura-price">$15.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">3 aspectos de vida en el tiempo</div>
         <div class="lectura-desc">Tres áreas de tu vida exploradas en sus tres momentos: de dónde vienes, dónde estás y hacia dónde se dirige tu energía.</div>
         <div class="lectura-price">$40.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card featured reveal">
+      <a class="lectura-card featured reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-badge">Popular</div>
         <div class="lectura-name">Cruz Celta</div>
         <div class="lectura-desc">Una de las tiradas más completas del tarot. Explora en profundidad una situación específica desde múltiples ángulos: pasado, futuro, obstáculos, estado interno y posibilidades.</div>
         <div class="lectura-price">$50.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Tú + 8 aspectos de vida</div>
         <div class="lectura-desc">Una lectura panorámica. Tú eliges las ocho áreas que quieres explorar y las leemos con detalle. Ideal para quien desea una visión amplia de su momento vital.</div>
         <div class="lectura-price">$60.000</div>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal" style="grid-column: 1 / -1; max-width: 100%;">
+      <a class="lectura-card reveal" style="grid-column: 1 / -1; max-width: 100%;" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-badge">Lectura completa</div>
         <div class="lectura-name">Tirada de los 12 signos / 12 casas astrales</div>
         <div class="lectura-desc">Una carta por cada casa astral o signo del zodiaco. Una lectura amplia de tu energía y de los distintos aspectos de tu vida. Es la sesión más completa que ofrezco.</div>
         <div class="lectura-price">$120.000</div>
-      </div>
+      </a>
     </div>
   </div>
 </section>
@@ -1221,38 +1296,26 @@
     </p>
 
     <div class="cards-grid">
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://labyrinthos.co" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Cursos y escuelas</div>
         <div class="lectura-desc">
-          Plataformas donde puedes encontrar formación continua en tarot, desde bases hasta enfoques más profundos.
+          Plataformas donde puedes encontrar formación continua en tarot, desde bases hasta enfoques más profundos.[web:193]
         </div>
-        <ul class="resource-list">
-          <li><a href="https://labyrinthos.co" target="_blank" rel="noopener noreferrer">Labyrinthos Academy (inglés)</a></li>
-          <li><a href="https://tarotschool.com" target="_blank" rel="noopener noreferrer">The Tarot School (inglés)</a></li>
-        </ul>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://3quarksdaily.com/3quarksdaily/2022/02/the-tarot-narrative-therapy-self-making.html" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Lecturas y blogs</div>
         <div class="lectura-desc">
-          Textos para pensar el tarot más allá de la predicción: narrativa, terapia, procesos.
+          Textos para pensar el tarot más allá de la predicción: narrativa, terapia, procesos.[web:148]
         </div>
-        <ul class="resource-list">
-          <li><a href="https://3quarksdaily.com/3quarksdaily/2022/02/the-tarot-narrative-therapy-self-making.html" target="_blank" rel="noopener noreferrer">The Tarot: Narrative, Therapy, Self‑Making (inglés)</a></li>[web:148]
-          <li><a href="https://threedeertarot.com/blog/tarot-as-storytelling" target="_blank" rel="noopener noreferrer">Tarot as Storytelling (inglés)</a></li>[web:151]
-        </ul>
-      </div>
+      </a>
 
-      <div class="lectura-card reveal">
+      <a class="lectura-card reveal" href="https://www.youtube.com/hashtag/learntarot" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">YouTube y audio</div>
         <div class="lectura-desc">
-          Canales y formatos cortos para aprender cartas, tiradas y formas de leer.
+          Canales y formatos cortos para aprender cartas, tiradas y formas de leer.[web:191]
         </div>
-        <ul class="resource-list">
-          <li><a href="https://www.youtube.com/hashtag/learntarot" target="_blank" rel="noopener noreferrer">#learntarot en YouTube</a></li>[web:191]
-          <li><a href="https://www.thetarotlady.com/tarot-bytes-podcast/" target="_blank" rel="noopener noreferrer">Tarot Bytes, de Theresa Reed (podcast, inglés)</a></li>[web:185]
-        </ul>
-      </div>
+      </a>
     </div>
   </div>
 </section>
