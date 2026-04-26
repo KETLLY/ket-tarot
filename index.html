@@ -20,7 +20,8 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 :root {
   --ink: #05030b;
@@ -84,17 +85,19 @@ nav {
 }
 
 .nav-logo {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: var(--bone);
   text-decoration: none;
 }
 
 .nav-logo span {
   color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
+  font-weight: 400;
 }
 
 .nav-links {
@@ -236,18 +239,20 @@ nav {
 }
 
 h1 {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: clamp(3.4rem, 10vw, 5.8rem);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 9vw, 4.8rem);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.2;
   color: var(--bone);
   margin-bottom: 1.4rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
 }
 
 h1 em {
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--neon-pink);
+  font-weight: 400;
 }
 
 .hero-sub {
@@ -358,18 +363,20 @@ section {
 }
 
 h2 {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 6vw, 2.8rem);
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1.3;
   color: var(--bone);
   margin-bottom: 1.6rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.03em;
 }
 
 h2 em {
+  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   color: var(--neon-pink);
+  font-weight: 400;
 }
 
 /* ========== SOBRE ========== */
@@ -469,7 +476,7 @@ h2 em {
 }
 
 .sobre-text p:first-of-type::first-letter {
-  font-family: 'EB Garamond', serif;, serif;
+  font-family: 'Cinzel', serif;
   font-size: 2.4rem;
   float: left;
   line-height: 1;
@@ -552,10 +559,11 @@ h2 em {
 
 .enfoque-header h3 {
   margin: 0;
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 1.3rem;
-  letter-spacing: 0.04em;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
   font-weight: 500;
+  font-style: italic;
 }
 
 .enfoque-card p {
@@ -723,12 +731,13 @@ h2 em {
 }
 
 .lectura-name {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 1.3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
   font-weight: 500;
   margin-bottom: 0.6rem;
   line-height: 1.3;
   color: var(--bone);
+  font-style: italic;
 }
 
 .lectura-desc {
@@ -739,8 +748,8 @@ h2 em {
 }
 
 .lectura-price {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 1.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
   font-weight: 500;
   color: var(--terracota);
 }
@@ -831,9 +840,9 @@ h2 em {
 }
 
 .modalidad-num {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 4.4rem;
-  font-weight: 300;
+  font-family: 'Cinzel', serif;
+  font-size: 4rem;
+  font-weight: 400;
   color: rgba(201,169,110,0.35);
   position: absolute;
   top: 0.6rem;
@@ -841,7 +850,7 @@ h2 em {
   line-height: 1;
   pointer-events: none;
   text-shadow: 0 0 14px rgba(5,3,11,0.8);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
 }
 
 .modalidad-box:hover .modalidad-num {
@@ -849,10 +858,11 @@ h2 em {
 }
 
 .modalidad-box h3 {
-  font-family: 'EB Garamond', serif;, serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.6rem;
   font-weight: 500;
   margin-bottom: 1rem;
+  font-style: italic;
 }
 
 .modalidad-box p {
@@ -875,7 +885,7 @@ h2 em {
 
 .agenda-box strong {
   color: var(--bone);
-  font-family: 'EB Garamond', serif;, serif;
+  font-family: 'Cinzel', serif;
   font-size: 1.05rem;
 }
 
@@ -970,11 +980,12 @@ h2 em {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  font-family: 'EB Garamond', serif;, serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: 1.15rem;
   font-weight: 500;
   color: var(--bone);
   transition: color 0.3s;
+  font-style: italic;
 }
 
 .faq-q:hover {
@@ -1048,7 +1059,7 @@ h2 em {
 }
 
 .cta-deco {
-  font-family: 'EB Garamond', serif;, serif;
+  font-family: 'Cormorant Garamond', serif;
   font-size: clamp(4rem, 15vw, 9rem);
   font-weight: 300;
   font-style: italic;
@@ -1088,11 +1099,12 @@ footer {
 }
 
 footer .footer-brand {
-  font-family: 'EB Garamond', serif;, serif;
-  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--bone);
   margin-bottom: 0.5rem;
+  letter-spacing: 0.08em;
 }
 
 footer a {
@@ -1232,7 +1244,7 @@ footer .footer-sep {
 <body>
 
 <nav>
-  <a href="#hero" class="nav-logo">Ket <span>| tarot narrativo</span></a>
+  <a href="#hero" class="nav-logo">KET <span>| tarot narrativo</span></a>
   <ul class="nav-links">
     <li><a href="#sobre">Sobre mí</a></li>
     <li><a href="#enfoque">Mi enfoque</a></li>
@@ -1242,7 +1254,7 @@ footer .footer-sep {
     <li><a href="#modalidades">Modalidades</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="nav-cta" target="_blank" rel="noopener noreferrer">Reservar</a>
+  <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="nav-cta" target="_blank" rel="noopener noreferrer">RESERVAR</a>
   <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
     <span></span><span></span><span></span>
   </button>
@@ -1265,17 +1277,17 @@ footer .footer-sep {
   <div class="hero-bg"></div>
   <div class="hero-ornament"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Tarot narrativo</p>
+    <p class="hero-eyebrow">TAROT NARRATIVO</p>
     <h1>El tarot como<br><em>espejo de tu energía</em></h1>
     <p class="hero-sub">
       Más que adivinarte el futuro, leo la forma en la que tu energía se mueve hoy: dónde se enreda, dónde insiste, dónde te pide un cambio. Leemos tu vida como una historia: tú en el centro, los arcanos alrededor, dibujamos la escena.
     </p>
     <div class="hero-btns">
-      <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary" target="_blank" rel="noopener noreferrer">Reserva tu espacio</a>
-      <a href="#lecturas" class="btn-secondary">Ver lecturas</a>
+      <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary" target="_blank" rel="noopener noreferrer">RESERVA TU ESPACIO</a>
+      <a href="#lecturas" class="btn-secondary">VER LECTURAS</a>
       <a href="https://wa.me/573144268970" class="btn-secondary" target="_blank" rel="noopener noreferrer">
         <span style="font-size: 1.1rem; margin-right: 0.4rem;">💬</span>
-        Q&A · WhatsApp
+        Q&A · WHATSAPP
       </a>
     </div>
   </div>
@@ -1283,7 +1295,7 @@ footer .footer-sep {
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
       <path d="M8 3v10M4 9l4 4 4-4"/>
     </svg>
-    Descender
+    DESCENDER
   </div>
 </section>
 
@@ -1296,7 +1308,7 @@ footer .footer-sep {
         </div>
       </div>
       <div class="sobre-text reveal">
-        <p class="section-label">Sobre mí</p>
+        <p class="section-label">SOBRE MÍ</p>
         <h2>Soy Ket,<br><em>narradora y tarotista</em></h2>
         <p>Desde hace cuatro años acompaño a personas que buscan claridad, dirección y una mirada más profunda sobre lo que están viviendo. Soy narradora digital y esa manera de mirar el mundo se filtra en todo: también en cómo interpreto el tarot.</p>
         <p>En cada lectura pienso en quien se sienta frente a mí como en la protagonista de una película, una historia nueva por conocer: hay escenas que duelen, escenas que movilizan, escenas que piden un corte para empezar de nuevo. Los 22 arcanos son el guion secreto de esa historia: el recorrido de El Loco es el mapa de ese viaje.</p>
@@ -1312,7 +1324,7 @@ footer .footer-sep {
 
 <section id="enfoque">
   <div class="section-inner">
-    <p class="section-label reveal">Mi enfoque</p>
+    <p class="section-label reveal">MI ENFOQUE</p>
     <h2 class="reveal">Mi ritual<br><em>cuando abro una lectura</em></h2>
     <div class="enfoque-grid">
       <div class="enfoque-card reveal">
@@ -1348,7 +1360,7 @@ footer .footer-sep {
 
 <section id="barajas">
   <div class="section-inner">
-    <p class="section-label reveal">Aprende</p>
+    <p class="section-label reveal">APRENDE</p>
     <h2 class="reveal">Las barajas que<br><em>acompañan mis lecturas</em></h2>
     <div class="cards-grid" style="margin-top: 3rem;">
       
@@ -1359,8 +1371,8 @@ footer .footer-sep {
           Un mazo de mundos diversos, colores suaves y símbolos que parecen sacados de un sueño. Vemos a través de cuentos de hadas. Lo uso cuando necesitamos una mirada sensible, casi cinematográfica, sobre lo que estás viviendo.
         </div>
         <div class="resource-buttons" style="margin-top: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
-          <a class="pill-link" href="https://www.chroniclebooks.com/products/star-spinner-tarot" target="_blank" rel="noopener noreferrer">Ver mazo</a>
-          <a class="pill-link pill-secondary" href="https://www.asaliearthwork.com/blog/starspinnertarot-review" target="_blank" rel="noopener noreferrer">Reseña / referencia</a>
+          <a class="pill-link" href="https://www.chroniclebooks.com/products/star-spinner-tarot" target="_blank" rel="noopener noreferrer">VER MAZO</a>
+          <a class="pill-link pill-secondary" href="https://www.asaliearthwork.com/blog/starspinnertarot-review" target="_blank" rel="noopener noreferrer">RESEÑA / REFERENCIA</a>
         </div>
       </div>
 
@@ -1371,8 +1383,8 @@ footer .footer-sep {
           Relee los arcanos a través de mitos y cuentos al rededor del mundo. Me ayuda a ubicar tu historia dentro de relatos más grandes: héroes, caídas y renacimientos que se parecen mucho a lo que estás atravesando.
         </div>
         <div class="resource-buttons" style="margin-top: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
-          <a class="pill-link" href="https://www.penguinrandomhouse.com/books/611153/tarot-of-the-divine-by-yoshi-yoshitani/" target="_blank" rel="noopener noreferrer">Ver mazo</a>
-          <a class="pill-link pill-secondary" href="https://benebellwen.com/2020/11/09/tarot-of-the-divine-by-yoshi-yoshitani/" target="_blank" rel="noopener noreferrer">Reseña / referencia</a>
+          <a class="pill-link" href="https://www.penguinrandomhouse.com/books/611153/tarot-of-the-divine-by-yoshi-yoshitani/" target="_blank" rel="noopener noreferrer">VER MAZO</a>
+          <a class="pill-link pill-secondary" href="https://benebellwen.com/2020/11/09/tarot-of-the-divine-by-yoshi-yoshitani/" target="_blank" rel="noopener noreferrer">RESEÑA / REFERENCIA</a>
         </div>
       </div>
 
@@ -1383,8 +1395,8 @@ footer .footer-sep {
           De aquí sacamos la carta que cierra la sesión. Una imagen, una frase o un gesto concreto para llevarte a la vida diaria cuando se termina la lectura y empieza un nuevo arco te tu historia.
         </div>
         <div class="resource-buttons" style="margin-top: 1.2rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
-          <a class="pill-link" href="https://www.instagram.com/reel/DO0vqm-iUw2/" target="_blank" rel="noopener noreferrer">Ver mazo</a>
-          <a class="pill-link pill-secondary" href="https://www.instagram.com/reel/DO0vqm-iUw2/" target="_blank" rel="noopener noreferrer">Reseña / referencia</a>
+          <a class="pill-link" href="https://www.instagram.com/reel/DO0vqm-iUw2/" target="_blank" rel="noopener noreferrer">VER MAZO</a>
+          <a class="pill-link pill-secondary" href="https://www.instagram.com/reel/DO0vqm-iUw2/" target="_blank" rel="noopener noreferrer">RESEÑA / REFERENCIA</a>
         </div>
       </div>
 
@@ -1394,7 +1406,7 @@ footer .footer-sep {
 
 <section id="lecturas">
   <div class="section-inner">
-    <p class="section-label reveal">Servicios</p>
+    <p class="section-label reveal">SERVICIOS</p>
     <h2 class="reveal">Lecturas <em>y tarifas</em></h2>
     <p class="lecturas-intro reveal">Cada lectura es un espacio diseñado para ti. Elige la que mejor acompañe lo que hoy necesitas mirar.</p>
     <div class="cards-grid">
@@ -1411,7 +1423,7 @@ footer .footer-sep {
       <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">Pasado, presente, futuro y tú</div>
         <div class="lectura-desc">Una lectura que ubica tu situación en el tiempo y te pone en el centro de tu propia historia. Cuatro cartas, una visión clara del proceso.</div>
-        <div class="lectura-price">$20.000</div>
+        <div class="lectura-price">$15.000</div>
       </a>
       <a class="lectura-card reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
         <div class="lectura-name">3 aspectos de vida en el tiempo</div>
@@ -1419,7 +1431,7 @@ footer .footer-sep {
         <div class="lectura-price">$50.000</div>
       </a>
       <a class="lectura-card featured reveal" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
-        <div class="lectura-badge">Popular</div>
+        <div class="lectura-badge">POPULAR</div>
         <div class="lectura-name">Cruz Celta</div>
         <div class="lectura-desc">Una de las tiradas más completas del tarot. Explora en profundidad una situación específica desde múltiples ángulos: pasado, futuro, obstáculos, estado interno y posibilidades.</div>
         <div class="lectura-price">$60.000</div>
@@ -1430,7 +1442,7 @@ footer .footer-sep {
         <div class="lectura-price">$70.000</div>
       </a>
       <a class="lectura-card reveal" style="grid-column: 1 / -1; max-width: 100%;" href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">
-        <div class="lectura-badge">Lectura completa</div>
+        <div class="lectura-badge">LECTURA COMPLETA</div>
         <div class="lectura-name">Tirada de los 12 signos / 12 casas astrales</div>
         <div class="lectura-desc">Una carta por cada casa astral o signo del zodiaco. Una lectura amplia de tu energía y de los distintos aspectos de tu vida. Es la sesión más completa que ofrezco.</div>
         <div class="lectura-price">$120.000</div>
@@ -1441,7 +1453,7 @@ footer .footer-sep {
 
 <section id="aprende">
   <div class="section-inner">
-    <p class="section-label reveal">Aprende sobre tarot</p>
+    <p class="section-label reveal">APRENDE SOBRE TAROT</p>
     <h2 class="reveal">Recursos para<br><em>seguir tu propia investigación</em></h2>
     <p class="lecturas-intro reveal">
       No quiero que dependas solo de mí. Aquí dejo algunas puertas de entrada para que explores el tarot a tu ritmo.
@@ -1453,8 +1465,8 @@ footer .footer-sep {
           Plataformas donde puedes encontrar formación continua en tarot, desde bases hasta enfoques más profundos.
         </div>
         <div class="resource-buttons">
-          <a class="pill-link" href="https://labyrinthos.co/" target="_blank" rel="noopener noreferrer">Labyrinthos</a>
-          <a class="pill-link pill-secondary" href="https://tarotschool.com/" target="_blank" rel="noopener noreferrer">The Tarot School</a>
+          <a class="pill-link" href="https://labyrinthos.co/" target="_blank" rel="noopener noreferrer">LABYRINTHOS</a>
+          <a class="pill-link pill-secondary" href="https://tarotschool.com/" target="_blank" rel="noopener noreferrer">THE TAROT SCHOOL</a>
         </div>
       </div>
       <div class="lectura-card reveal">
@@ -1463,8 +1475,8 @@ footer .footer-sep {
           Textos para pensar el tarot más allá de la predicción: narrativa, terapia, procesos.
         </div>
         <div class="resource-buttons">
-          <a class="pill-link" href="https://3quarksdaily.com/3quarksdaily/2022/02/the-tarot-narrative-therapy-self-making.html" target="_blank" rel="noopener noreferrer">Narrative Therapy</a>
-          <a class="pill-link pill-secondary" href="https://threedeertarot.com/blog/tarot-as-storytelling" target="_blank" rel="noopener noreferrer">Tarot as Storytelling</a>
+          <a class="pill-link" href="https://3quarksdaily.com/3quarksdaily/2022/02/the-tarot-narrative-therapy-self-making.html" target="_blank" rel="noopener noreferrer">NARRATIVE THERAPY</a>
+          <a class="pill-link pill-secondary" href="https://threedeertarot.com/blog/tarot-as-storytelling" target="_blank" rel="noopener noreferrer">TAROT AS STORYTELLING</a>
         </div>
       </div>
       <div class="lectura-card reveal">
@@ -1473,8 +1485,8 @@ footer .footer-sep {
           Canales y formatos cortos para aprender cartas, tiradas y formas de leer.
         </div>
         <div class="resource-buttons">
-          <a class="pill-link" href="https://www.youtube.com/hashtag/learntarot" target="_blank" rel="noopener noreferrer">#learntarot</a>
-          <a class="pill-link pill-secondary" href="https://www.thetarotlady.com/tarot-bytes-podcast/" target="_blank" rel="noopener noreferrer">Tarot Bytes</a>
+          <a class="pill-link" href="https://www.youtube.com/hashtag/learntarot" target="_blank" rel="noopener noreferrer">#LEARNTAROT</a>
+          <a class="pill-link pill-secondary" href="https://www.thetarotlady.com/tarot-bytes-podcast/" target="_blank" rel="noopener noreferrer">TAROT BYTES</a>
         </div>
       </div>
     </div>
@@ -1483,7 +1495,7 @@ footer .footer-sep {
 
 <section id="modalidades">
   <div class="section-inner">
-    <p class="section-label reveal">Cómo nos encontramos</p>
+    <p class="section-label reveal">CÓMO NOS ENCONTRAMOS</p>
     <h2 class="reveal">Modalidades <em>de atención</em></h2>
     <div class="modalidades-grid">
       <div class="modalidad-box reveal">
@@ -1505,7 +1517,7 @@ footer .footer-sep {
 
 <section id="para-quien">
   <div class="section-inner">
-    <p class="section-label reveal">¿Esto es para ti?</p>
+    <p class="section-label reveal">¿ESTO ES PARA TI?</p>
     <h2 class="reveal">Para quienes buscan<br><em>verdad y movimiento</em></h2>
     <ul class="para-quien-list">
       <li class="reveal">Para quienes sienten que algo en su vida pide dirección y claridad.</li>
@@ -1518,7 +1530,7 @@ footer .footer-sep {
 
 <section id="faq">
   <div class="section-inner">
-    <p class="section-label reveal">Preguntas frecuentes</p>
+    <p class="section-label reveal">PREGUNTAS FRECUENTES</p>
     <h2 class="reveal">Todo lo que<br><em>quieres saber</em></h2>
     <div class="faq-list reveal">
       <div class="faq-item">
@@ -1564,15 +1576,15 @@ footer .footer-sep {
 <section id="cta-final">
   <div class="cta-deco">Ket</div>
   <div class="section-inner">
-    <p class="section-label reveal" style="justify-content: center;"><span>✦</span><span>Tu momento</span><span>✦</span></p>
+    <p class="section-label reveal" style="justify-content: center;"><span>✦</span><span>TU MOMENTO</span><span>✦</span></p>
     <h2 class="reveal">¿Lista para<br><em>leer tu historia?</em></h2>
     <p class="reveal">Tu lectura te espera: un espacio íntimo, honesto y diseñado para ti. A veces comprender tu historia es el primer paso para transformarla.</p>
-    <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary reveal" target="_blank" rel="noopener noreferrer" style="display: inline-block;">Reserva tu espacio</a>
+    <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary reveal" target="_blank" rel="noopener noreferrer" style="display: inline-block;">RESERVA TU ESPACIO</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-brand">Ket | tarot narrativo</div>
+  <div class="footer-brand">KET | TAROT NARRATIVO</div>
   <div style="margin-top: 0.8rem;">
     <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">Reservas</a>
     <span class="footer-sep">·</span>
