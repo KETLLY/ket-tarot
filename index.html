@@ -269,6 +269,13 @@ h1 em {
   flex-wrap: wrap;
   gap: 1rem;
   justify-content: center;
+  align-items: stretch; /* Alinea los botones a la misma altura */
+}
+
+.hero-btns .btn-primary,
+.hero-btns .btn-secondary {
+  white-space: nowrap; /* Evita que el texto se parta */
+  min-width: max-content; /* Asegura que el botón tenga el ancho necesario */
 }
 
 .btn-primary {
