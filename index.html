@@ -140,30 +140,35 @@
       radial-gradient(ellipse 50% 45% at 5% 95%, rgba(61,143,255,0.22) 0%, transparent 60%),
       var(--deep-blue);
   }
- .hero-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(1.5px 1.5px at 8% 18%, rgba(255,255,255,0.9) 0, transparent 55%),
-    radial-gradient(2px 2px at 22% 72%, rgba(255,255,255,0.8) 0, transparent 55%),
-    radial-gradient(1.5px 1.5px at 45% 30%, rgba(255,255,255,0.85) 0, transparent 55%),
-    radial-gradient(1.5px 1.5px at 68% 65%, rgba(255,255,255,0.8) 0, transparent 55%),
-    radial-gradient(1.5px 1.5px at 82% 40%, rgba(255,255,255,0.7) 0, transparent 55%);
-  opacity: 0.6;
-  pointer-events: none;
-}
+
+  .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 5% 15%, rgba(255,255,255,0.9) 0, transparent 55%),
+      radial-gradient(2px 2px at 18% 40%, rgba(215,183,255,0.85) 0, transparent 55%),
+      radial-gradient(2px 2px at 32% 75%, rgba(255,255,255,0.8) 0, transparent 55%),
+      radial-gradient(2px 2px at 52% 28%, rgba(222,204,255,0.9) 0, transparent 55%),
+      radial-gradient(2px 2px at 68% 60%, rgba(255,255,255,0.85) 0, transparent 55%),
+      radial-gradient(2px 2px at 82% 35%, rgba(215,183,255,0.8) 0, transparent 55%),
+      radial-gradient(2px 2px at 90% 78%, rgba(255,255,255,0.85) 0, transparent 55%);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
   .hero-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.35) 0, transparent 55%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.25) 0, transparent 55%);
-  mix-blend-mode: screen;
-  opacity: 0.18;
-  pointer-events: none;
-}
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(120deg, rgba(255,255,255,0.28) 0 1px, transparent 1px),
+      linear-gradient(200deg, rgba(215,183,255,0.22) 0 1px, transparent 1px);
+    background-size: 220px 220px, 260px 260px;
+    opacity: 0.18;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
 
   .hero-ornament {
     position: absolute;
@@ -367,12 +372,28 @@
     margin: 0 auto;
   }
 
+  .foto-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -8%;
+    border-radius: 999px;
+    background: radial-gradient(circle at 30% 10%, rgba(255,95,162,0.25), transparent 60%),
+                radial-gradient(circle at 70% 90%, rgba(122,60,140,0.35), transparent 70%);
+    opacity: 0.7;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
   .foto-real {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border: 1px solid rgba(201,169,110,0.2);
     filter: saturate(0.95) contrast(1.02);
+  }
+
+  .foto-wrapper:hover .foto-real {
+    filter: saturate(1.1) contrast(1.07);
   }
 
   .foto-wrapper::after {
@@ -424,34 +445,94 @@
     .enfoque-grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 
- .enfoque-card {
-  padding: 2rem 1.8rem;
-  border: 1px solid rgba(215,191,255,0.25);
-  background: radial-gradient(circle at top, rgba(122,60,140,0.35), rgba(7,5,24,0.98));
-  color: var(--bone);
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  position: relative;
-}
+  .enfoque-card {
+    padding: 2rem 1.8rem;
+    border: 1px solid rgba(215,191,255,0.25);
+    background: radial-gradient(circle at top, rgba(122,60,140,0.35), rgba(7,5,24,0.98));
+    color: var(--bone);
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    position: relative;
+  }
 
-.enfoque-card h3 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 0.7rem;
-  color: var(--bone);
-}
+  .enfoque-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+    color: var(--bone);
+  }
 
-.enfoque-card p {
-  font-size: 0.92rem;
-  color: rgba(247,242,255,0.78);
-  line-height: 1.7;
-}
+  .enfoque-card p {
+    font-size: 0.92rem;
+    color: rgba(247,242,255,0.78);
+    line-height: 1.7;
+  }
 
-.enfoque-card:hover {
-  border-color: var(--neon-pink);
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-}
+  .enfoque-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+  }
+
+  .enfoque-icon::after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 999px;
+    border: 1px solid rgba(243,201,139,0.4);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .enfoque-card:hover .enfoque-icon::after {
+    opacity: 1;
+  }
+
+  .enfoque-card:hover {
+    border-color: var(--neon-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+  }
+
+  /* Imágenes para barajas y enfoque */
+  .enfoque-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    border: 1px solid rgba(247,242,255,0.18);
+  }
+
+  .enfoque-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(1.1) contrast(1.05);
+  }
+
+  /* Sección barajas */
+  #barajas {
+    background: radial-gradient(circle at top left, rgba(122,60,140,0.28), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(11,16,37,0.9), transparent 60%),
+                #05030b;
+  }
+
+  #barajas h2 { color: var(--bone); }
+  #barajas .lectura-desc { color: rgba(247,242,255,0.78); }
+
+  #barajas .lectura-card {
+    transform-origin: center bottom;
+    transform: perspective(900px) rotateX(8deg);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  #barajas .lectura-card:hover {
+    transform: perspective(900px) rotateX(0deg) translateY(-6px);
+    box-shadow: 0 24px 50px rgba(0,0,0,0.6);
+  }
 
   #lecturas {
     background: var(--sand);
@@ -544,6 +625,35 @@
     color: var(--ink);
     padding: 0.2rem 0.6rem;
     margin-bottom: 0.8rem;
+  }
+
+  /* Aprende */
+  #aprende {
+    background: var(--ink);
+  }
+  #aprende h2 { color: var(--bone); }
+  #aprende .lectura-desc { color: rgba(247,242,255,0.78); }
+
+  .resource-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0.5rem 0 0;
+    font-size: 0.85rem;
+  }
+
+  .resource-list li + li {
+    margin-top: 0.35rem;
+  }
+
+  .resource-list a {
+    color: var(--lilac);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(216,183,230,0.4);
+  }
+
+  .resource-list a:hover {
+    color: var(--neon-pink);
+    border-bottom-color: var(--neon-pink);
   }
 
   #modalidades {
@@ -901,7 +1011,10 @@
   <a href="#hero" class="nav-logo">Ket <span>| tarot narrativo</span></a>
   <ul class="nav-links">
     <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#enfoque">Mi enfoque</a></li>
+    <li><a href="#barajas">Barajas</a></li>
     <li><a href="#lecturas">Lecturas</a></li>
+    <li><a href="#aprende">Aprende</a></li>
     <li><a href="#modalidades">Modalidades</a></li>
     <li><a href="#faq">FAQ</a></li>
   </ul>
@@ -915,7 +1028,10 @@
 <div class="mobile-menu" id="mobileMenu">
   <button class="menu-close" onclick="toggleMenu()" aria-label="Cerrar menú">✕</button>
   <a href="#sobre" onclick="toggleMenu()">Sobre mí</a>
+  <a href="#enfoque" onclick="toggleMenu()">Mi enfoque</a>
+  <a href="#barajas" onclick="toggleMenu()">Barajas</a>
   <a href="#lecturas" onclick="toggleMenu()">Lecturas</a>
+  <a href="#aprende" onclick="toggleMenu()">Aprende</a>
   <a href="#modalidades" onclick="toggleMenu()">Modalidades</a>
   <a href="#para-quien" onclick="toggleMenu()">¿Para quién?</a>
   <a href="#faq" onclick="toggleMenu()">FAQ</a>
@@ -1001,7 +1117,48 @@
     </div>
   </div>
 </section>
-  
+
+<section id="barajas">
+  <div class="section-inner">
+    <p class="section-label reveal">Barajas</p>
+    <h2 class="reveal">Los mazos que<br><em>acompañan mis lecturas</em></h2>
+
+    <div class="cards-grid">
+
+      <div class="lectura-card reveal">
+        <div class="enfoque-image">
+          <img src="./star-spinner.jpg" alt="Star Spinner Tarot sobre la mesa" loading="lazy">
+        </div>
+        <div class="lectura-name">Star Spinner Tarot</div>
+        <div class="lectura-desc">
+          Un mazo de mundos diversos, colores suaves y símbolos que parecen sacados de un sueño. Lo uso cuando necesitamos una mirada sensible, casi cinematográfica, sobre lo que estás viviendo.
+        </div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="enfoque-image">
+          <img src="./tarot-divino.jpg" alt="Tarot de lo Divino, edición en español" loading="lazy">
+        </div>
+        <div class="lectura-name">Tarot de lo Divino</div>
+        <div class="lectura-desc">
+          Relee los arcanos a través de mitos y cuentos. Me ayuda a ubicar tu historia dentro de relatos más grandes: héroes, caídas y renacimientos que se parecen mucho a lo que estás atravesando.[web:110]
+        </div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="enfoque-image">
+          <img src="./oraculo-etereo.jpg" alt="Oráculo Etéreo usado como carta de cierre" loading="lazy">
+        </div>
+        <div class="lectura-name">Oráculo Etéreo</div>
+        <div class="lectura-desc">
+          Es la carta que cierra la sesión. Una imagen, una frase o un gesto concreto para llevarte a la vida diaria cuando se termina la lectura y empieza de nuevo tu historia fuera de la pantalla.[web:121]
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="lecturas">
   <div class="section-inner">
     <p class="section-label reveal">Servicios</p>
@@ -1050,6 +1207,51 @@
         <div class="lectura-name">Tirada de los 12 signos / 12 casas astrales</div>
         <div class="lectura-desc">Una carta por cada casa astral o signo del zodiaco. Una lectura amplia de tu energía y de los distintos aspectos de tu vida. Es la sesión más completa que ofrezco.</div>
         <div class="lectura-price">$120.000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="aprende">
+  <div class="section-inner">
+    <p class="section-label reveal">Aprende sobre tarot</p>
+    <h2 class="reveal">Recursos para<br><em>seguir tu propia investigación</em></h2>
+    <p class="lecturas-intro reveal">
+      No quiero que dependas solo de mí. Aquí dejo algunas puertas de entrada para que explores el tarot a tu ritmo.
+    </p>
+
+    <div class="cards-grid">
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Cursos y escuelas</div>
+        <div class="lectura-desc">
+          Plataformas donde puedes encontrar formación continua en tarot, desde bases hasta enfoques más profundos.
+        </div>
+        <ul class="resource-list">
+          <li><a href="https://labyrinthos.co" target="_blank" rel="noopener noreferrer">Labyrinthos Academy (inglés)</a></li>
+          <li><a href="https://tarotschool.com" target="_blank" rel="noopener noreferrer">The Tarot School (inglés)</a></li>
+        </ul>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Lecturas y blogs</div>
+        <div class="lectura-desc">
+          Textos para pensar el tarot más allá de la predicción: narrativa, terapia, procesos.
+        </div>
+        <ul class="resource-list">
+          <li><a href="https://3quarksdaily.com/3quarksdaily/2022/02/the-tarot-narrative-therapy-self-making.html" target="_blank" rel="noopener noreferrer">The Tarot: Narrative, Therapy, Self‑Making (inglés)</a></li>[web:148]
+          <li><a href="https://threedeertarot.com/blog/tarot-as-storytelling" target="_blank" rel="noopener noreferrer">Tarot as Storytelling (inglés)</a></li>[web:151]
+        </ul>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">YouTube y audio</div>
+        <div class="lectura-desc">
+          Canales y formatos cortos para aprender cartas, tiradas y formas de leer.
+        </div>
+        <ul class="resource-list">
+          <li><a href="https://www.youtube.com/hashtag/learntarot" target="_blank" rel="noopener noreferrer">#learntarot en YouTube</a></li>[web:191]
+          <li><a href="https://www.thetarotlady.com/tarot-bytes-podcast/" target="_blank" rel="noopener noreferrer">Tarot Bytes, de Theresa Reed (podcast, inglés)</a></li>[web:185]
+        </ul>
       </div>
     </div>
   </div>
