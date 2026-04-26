@@ -646,27 +646,25 @@
   }
 
 .lectura-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
   background: var(--cream);
   padding: 1.8rem;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .lectura-card::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--purple), var(--gold), var(--terracota));
+  height: 3px;
+  background: linear-gradient(90deg, #5c1b6c, #c9a96e, #b5705a);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.4s;
+  transition: transform 0.5s ease;
+  z-index: 10;
 }
 
 .lectura-card:hover::before { 
