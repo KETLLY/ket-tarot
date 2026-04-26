@@ -140,17 +140,17 @@
       radial-gradient(ellipse 50% 45% at 5% 95%, rgba(61,143,255,0.22) 0%, transparent 60%),
       var(--deep-blue);
   }
-  .hero-bg::after {
+ .hero-bg::after {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.7) 0, transparent 50%),
-    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.6) 0, transparent 50%),
-    radial-gradient(1.5px 1.5px at 70% 30%, rgba(255,255,255,0.8) 0, transparent 60%),
-    radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.5) 0, transparent 50%),
-    radial-gradient(1px 1px at 40% 40%, rgba(255,255,255,0.4) 0, transparent 50%);
-  opacity: 0.35;
+    radial-gradient(1.5px 1.5px at 8% 18%, rgba(255,255,255,0.9) 0, transparent 55%),
+    radial-gradient(2px 2px at 22% 72%, rgba(255,255,255,0.8) 0, transparent 55%),
+    radial-gradient(1.5px 1.5px at 45% 30%, rgba(255,255,255,0.85) 0, transparent 55%),
+    radial-gradient(1.5px 1.5px at 68% 65%, rgba(255,255,255,0.8) 0, transparent 55%),
+    radial-gradient(1.5px 1.5px at 82% 40%, rgba(255,255,255,0.7) 0, transparent 55%);
+  opacity: 0.6;
   pointer-events: none;
 }
   .hero-bg::before {
@@ -424,39 +424,34 @@
     .enfoque-grid { grid-template-columns: 1fr 1fr 1fr; }
   }
 
-  .enfoque-card {
-    padding: 2rem 1.8rem;
-    border: 1px solid rgba(26,22,20,0.09);
-    background: rgba(250,247,242,0.8);
-    transition: border-color 0.3s, transform 0.3s;
-    position: relative;
-  }
+ .enfoque-card {
+  padding: 2rem 1.8rem;
+  border: 1px solid rgba(215,191,255,0.25);
+  background: radial-gradient(circle at top, rgba(122,60,140,0.35), rgba(7,5,24,0.98));
+  color: var(--bone);
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
 
-  .enfoque-card:hover {
-    border-color: var(--gold);
-    transform: translateY(-3px);
-  }
+.enfoque-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+  color: var(--bone);
+}
 
-  .enfoque-icon {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    color: var(--purple);
-    margin-bottom: 1rem;
-    line-height: 1;
-  }
+.enfoque-card p {
+  font-size: 0.92rem;
+  color: rgba(247,242,255,0.78);
+  line-height: 1.7;
+}
 
-  .enfoque-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.7rem;
-  }
-
-  .enfoque-card p {
-    font-size: 0.92rem;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+.enfoque-card:hover {
+  border-color: var(--neon-pink);
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+}
 
   #lecturas {
     background: var(--sand);
