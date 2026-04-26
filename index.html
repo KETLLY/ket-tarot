@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ket | Tarotista de Desarrollo Personal</title>
+<meta name="description" content="Ket, narradora digital y tarotista de desarrollo personal. Lecturas con Star Spinner Tarot y Oráculo Etéreo para claridad, decisiones y crecimiento personal.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#1a1614">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ket | Tarotista de Desarrollo Personal">
+<meta property="og:description" content="Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal.">
+<meta property="og:locale" content="es_CO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ket | Tarotista de Desarrollo Personal">
+<meta name="twitter:description" content="Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --ink: #1a1614;
+    --bone: #f5f0e8;
+    --sand: #e8ddd0;
+    --sage: #8a9b8a;
+    --purple: #5c1b6c;
+    --purple-light: #c084d4;
+    --purple-soft: rgba(92,27,108,0.13);
+    --purple-glow: rgba(92,27,108,0.08);
+    --purple: #5c1b6c;
+    --purple-light: rgba(92,27,108,0.12);
+    --purple-muted: rgba(92,27,108,0.07);
+    --terracota: #b5705a;
+    --gold: #c9a96e;
+    --muted: #6b5f58;
+    --cream: #faf7f2;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250,247,242,0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.02rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+    font-style: italic;
+  }
+
+  .nav-links {
+    display: none;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--ink);
+    color: var(--bone);
+    border: none;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .nav-cta:hover { background: var(--purple); }
+
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+    nav { padding: 1.2rem 4rem; }
+  }
+
+  #hero {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 8rem 1.8rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,169,110,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(181,112,90,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 40% at 10% 90%, rgba(92,27,108,0.07) 0%, transparent 60%),
+      var(--cream);
+  }
+
+  .hero-ornament {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(600px, 90vw);
+    height: min(600px, 90vw);
+    border: 1px solid rgba(92,27,108,0.15);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-ornament::before {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(92,27,108,0.1);
+    border-radius: 50%;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 10vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--terracota);
+  }
+
+  .hero-sub {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    color: var(--muted);
+    max-width: 520px;
+    margin: 0 auto 2.8rem;
+    font-weight: 300;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background: var(--purple);
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    border: 1px solid rgba(26,22,20,0.25);
+    transition: border-color 0.3s, color 0.3s;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    animation: float 2.5s ease-in-out infinite;
+  }
+
+  .scroll-hint svg { opacity: 0.5; }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  section { padding: 6rem 1.8rem; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 3rem;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 1.6rem;
+  }
+
+  h2 em { font-style: italic; color: var(--terracota); }
+
+  #sobre {
+    background: var(--ink);
+    color: var(--bone);
+  }
+
+  #sobre .section-label { color: var(--gold); }
+  #sobre h2 { color: var(--bone); }
+  #sobre h2 em { color: var(--gold); }
+
+  .sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .sobre-grid {
+      grid-template-columns: 1fr 1.5fr;
+      gap: 5rem;
+    }
+  }
+
+  .foto-wrapper {
+    position: relative;
+    aspect-ratio: 3/4;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .foto-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 1px solid rgba(201,169,110,0.2);
+    filter: saturate(0.95) contrast(1.02);
+  }
+
+  .foto-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    right: -12px;
+    inset: 12px -12px -12px 12px;
+    border: 1px solid rgba(201,169,110,0.2);
+    z-index: -1;
+  }
+
+  .sobre-text p {
+    color: rgba(245,240,232,0.78);
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .sello {
+    margin-top: 2rem;
+    padding: 1.4rem 1.8rem;
+    border-left: 2px solid var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--bone);
+    line-height: 1.5;
+  }
+
+  #enfoque {
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 50%, rgba(138,155,138,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 90% 50%, rgba(92,27,108,0.05) 0%, transparent 60%),
+      var(--cream);
+  }
+
+  .enfoque-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .enfoque-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 900px) {
+    .enfoque-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  .enfoque-card {
+    padding: 2rem 1.8rem;
+    border: 1px solid rgba(26,22,20,0.09);
+    background: rgba(250,247,242,0.8);
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+  }
+
+  .enfoque-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  .enfoque-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .enfoque-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+  }
+
+  .enfoque-card p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  #lecturas {
+    background: var(--sand);
+  }
+
+  .lecturas-intro {
+    max-width: 560px;
+    color: var(--muted);
+    margin-bottom: 3rem;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  @media (min-width: 600px) {
+    .cards-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 900px) {
+    .cards-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .lectura-card {
+    background: var(--cream);
+    padding: 1.8rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lectura-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--purple), var(--gold), var(--terracota));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+  }
+
+  .lectura-card:hover::before { transform: scaleX(1); }
+
+  .lectura-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(26,22,20,0.08);
+  }
+
+  .lectura-card.featured {
+    background: var(--ink);
+    color: var(--bone);
+  }
+
+  .lectura-card.featured .lectura-desc { color: rgba(245,240,232,0.68); }
+  .lectura-card.featured .lectura-price { color: var(--gold); }
+
+  .lectura-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .lectura-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1.2rem;
+  }
+
+  .lectura-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--terracota);
+  }
+
+  .lectura-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  #modalidades {
+    background: var(--cream);
+  }
+
+  .modalidades-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 640px) {
+    .modalidades-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .modalidad-box {
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(26,22,20,0.1);
+    position: relative;
+    transition: border-color 0.3s;
+  }
+
+  .modalidad-box:hover { border-color: var(--purple); }
+
+  .modalidad-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgba(201,169,110,0.15);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .modalidad-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .modalidad-box p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .agenda-box {
+    margin-top: 2rem;
+    padding: 1.5rem 2rem;
+    background: var(--sand);
+    border: 1px solid rgba(92,27,108,0.2);
+  }
+
+  .agenda-box p {
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+
+  .agenda-box strong {
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+  }
+
+  #para-quien {
+    background: linear-gradient(160deg, var(--ink) 0%, #2a1230 50%, #2a201c 100%);
+    color: var(--bone);
+    text-align: center;
+  }
+
+  #para-quien h2 { color: var(--bone); }
+  #para-quien h2 em { color: var(--gold); }
+  #para-quien .section-label { color: var(--gold); justify-content: center; }
+  #para-quien .section-label::after { display: none; }
+  #para-quien .section-label::before {
+    content: '';
+    flex: 1;
+    max-width: 3rem;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.5;
+  }
+
+  .para-quien-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    list-style: none;
+  }
+
+  .para-quien-list li {
+    max-width: 560px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    font-style: italic;
+    color: rgba(245,240,232,0.8);
+    padding: 1.2rem 2rem;
+    border: 1px solid rgba(201,169,110,0.2);
+    line-height: 1.4;
+    transition: border-color 0.3s, color 0.3s;
+    width: 100%;
+  }
+
+  .para-quien-list li:hover {
+    border-color: var(--purple-light);
+    color: var(--bone);
+  }
+
+  #faq { background: var(--cream); }
+
+  .faq-list {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .faq-item { border-top: 1px solid rgba(26,22,20,0.1); }
+  .faq-item:last-child { border-bottom: 1px solid rgba(26,22,20,0.1); }
+
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: 1.4rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--ink);
+    transition: color 0.3s;
+  }
+
+  .faq-q:hover { color: var(--purple); }
+
+  .faq-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+    position: relative;
+    color: var(--gold);
+    transition: transform 0.3s;
+  }
+
+  .faq-icon::before,
+  .faq-icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .faq-icon::before { width: 100%; height: 1px; top: 50%; left: 0; transform: translateY(-50%); }
+  .faq-icon::after { width: 1px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+  .faq-item.open .faq-icon::after { opacity: 0; transform: translateX(-50%) rotate(90deg); }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s;
+  }
+
+  .faq-a-inner {
+    padding-bottom: 1.4rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 620px;
+  }
+
+  .faq-item.open .faq-a { max-height: 300px; }
+
+  #cta-final {
+    text-align: center;
+    padding: 7rem 1.8rem;
+    background:
+      radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,169,110,0.1) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 15% 80%, rgba(92,27,108,0.07) 0%, transparent 60%),
+      var(--sand);
+    position: relative;
+  }
+
+  .cta-deco {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 15vw, 9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(201,169,110,0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  #cta-final .section-inner { position: relative; z-index: 2; }
+  #cta-final h2 { margin-bottom: 1.2rem; }
+  #cta-final p {
+    color: var(--muted);
+    max-width: 460px;
+    margin: 0 auto 2.5rem;
+  }
+
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.5);
+    text-align: center;
+    padding: 2.5rem 1.8rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+  }
+
+  footer .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bone);
+    margin-bottom: 0.5rem;
+  }
+
+  footer a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  footer a:hover { opacity: 0.7; }
+  footer .footer-sep { margin: 0 0.5rem; opacity: 0.3; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 20px;
+    height: 1px;
+    background: var(--ink);
+    transition: all 0.3s;
+  }
+
+  @media (min-width: 768px) {
+    .hamburger { display: none; }
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 260px;
+    background: var(--ink);
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    padding: 5rem 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .mobile-menu.open { transform: translateX(0); }
+
+  .mobile-menu a {
+    text-decoration: none;
+    color: var(--bone);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+
+  .mobile-menu a:hover { opacity: 1; }
+
+  .menu-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--bone);
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 199;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+
+  .menu-overlay.open { opacity: 1; pointer-events: all; }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    opacity: 0.25;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .divider-sym {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="#hero" class="nav-logo">Ket <span>| tarotista de desarrollo personal</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#lecturas">Lecturas</a></li>
+    <li><a href="#modalidades">Modalidades</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="nav-cta" target="_blank" rel="noopener noreferrer">Reservar</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="menu-overlay" id="overlay" onclick="toggleMenu()"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <button class="menu-close" onclick="toggleMenu()" aria-label="Cerrar menú">✕</button>
+  <a href="#sobre" onclick="toggleMenu()">Sobre mí</a>
+  <a href="#lecturas" onclick="toggleMenu()">Lecturas</a>
+  <a href="#modalidades" onclick="toggleMenu()">Modalidades</a>
+  <a href="#para-quien" onclick="toggleMenu()">¿Para quién?</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+</div>
+
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ornament"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Tarot de desarrollo personal</p>
+    <h1>El tarot como<br><em>espejo de quien eres</em></h1>
+    <p class="hero-sub">Lecturas de tarot para claridad interior, toma de decisiones y crecimiento personal. Un espacio íntimo para leer tu historia con honestidad y dirección.</p>
+    <div class="hero-btns">
+      <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary" target="_blank" rel="noopener noreferrer">Reserva tu espacio</a>
+      <a href="#lecturas" class="btn-secondary">Ver lecturas</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.2">
+      <path d="M8 3v10M4 9l4 4 4-4"/>
+    </svg>
+    Descender
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="section-inner">
+    <div class="sobre-grid">
+      <div class="reveal">
+        <div class="foto-wrapper">
+          <img src="./ket-photo.jpg" alt="Retrato de Ket, narradora digital y tarotista de desarrollo personal" class="foto-real" width="1080" height="1440" loading="lazy">
+        </div>
+      </div>
+
+      <div class="sobre-text reveal">
+        <p class="section-label">Sobre mí</p>
+        <h2>Soy Ket,<br><em>narradora y tarotista</em></h2>
+        <p>Desde hace cuatro años acompaño a personas que buscan dirección, claridad y una mirada más profunda sobre sus procesos de vida. Soy narradora digital antes que cualquier otra cosa, y eso define la forma en la que leo.</p>
+        <p>Me apasiona conocer a alguien a través del tarot: cada lectura revela una narrativa íntima sobre quién eres, qué estás atravesando y hacia dónde puede dirigirse tu energía. Mi estilo es terapéutico, intuitivo y orientado al crecimiento personal.</p>
+        <p>Las personas que llegan a mí no le temen a la verdad. Buscan verse con honestidad, comprender su momento y tomar acción desde ese lugar.</p>
+        <div class="divider"><span class="divider-sym">✦</span></div>
+        <blockquote class="sello">
+          “No leo solo cartas: leo historias, procesos y verdades que buscan movimiento.”
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="enfoque">
+  <div class="section-inner">
+    <p class="section-label reveal">Mi enfoque</p>
+    <h2 class="reveal">Una lectura con<br><em>intención y profundidad</em></h2>
+    <div class="enfoque-grid">
+      <div class="enfoque-card reveal">
+        <div class="enfoque-icon">✦</div>
+        <h3>Star Spinner Tarot</h3>
+        <p>Trabajo con el mazo Star Spinner Tarot como base de cada sesión. Su universo visual, diverso y simbólico abre lecturas profundas, sensibles y muy personales.</p>
+      </div>
+      <div class="enfoque-card reveal">
+        <div class="enfoque-icon">◈</div>
+        <h3>Oráculo Etéreo</h3>
+        <p>Al final de cada lectura, el Oráculo Etéreo acompaña con un consejo de integración: un cierre para aterrizar el mensaje y orientarte en el siguiente paso.</p>
+      </div>
+      <div class="enfoque-card reveal">
+        <div class="enfoque-icon">◌</div>
+        <h3>Enfoque terapéutico</h3>
+        <p>Mis lecturas no buscan sentenciar el futuro. Leen la energía del momento y ofrecen orientación para tomar decisiones con más claridad, consciencia y presencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lecturas">
+  <div class="section-inner">
+    <p class="section-label reveal">Servicios</p>
+    <h2 class="reveal">Lecturas <em>y tarifas</em></h2>
+    <p class="lecturas-intro reveal">Cada lectura es un espacio diseñado para ti. Elige la que mejor acompañe lo que hoy necesitas mirar.</p>
+    <div class="cards-grid">
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Tirada de 1 carta</div>
+        <div class="lectura-desc">Una pregunta, una respuesta directa. Ideal para momentos en los que necesitas claridad inmediata sobre una situación concreta.</div>
+        <div class="lectura-price">$5.000</div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Aclaración de 2 cartas</div>
+        <div class="lectura-desc">Dos perspectivas que dialogan entre sí. Para cuando una sola carta no basta y quieres una lectura más amplia del momento.</div>
+        <div class="lectura-price">$5.000</div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Pasado, presente, futuro y tú</div>
+        <div class="lectura-desc">Una lectura que ubica tu situación en el tiempo y te pone en el centro de tu propia historia. Cuatro cartas, una visión clara del proceso.</div>
+        <div class="lectura-price">$15.000</div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">3 aspectos de vida en el tiempo</div>
+        <div class="lectura-desc">Tres áreas de tu vida exploradas en sus tres momentos: de dónde vienes, dónde estás y hacia dónde se dirige tu energía.</div>
+        <div class="lectura-price">$20.000</div>
+      </div>
+
+      <div class="lectura-card featured reveal">
+        <div class="lectura-badge">Popular</div>
+        <div class="lectura-name">Cruz Celta</div>
+        <div class="lectura-desc">Una de las tiradas más completas del tarot. Explora en profundidad una situación específica desde múltiples ángulos: pasado, futuro, obstáculos, estado interno y posibilidades.</div>
+        <div class="lectura-price">$50.000</div>
+      </div>
+
+      <div class="lectura-card reveal">
+        <div class="lectura-name">Tú + 8 aspectos de vida</div>
+        <div class="lectura-desc">Una lectura panorámica. Tú eliges las ocho áreas que quieres explorar y las leemos con detalle. Ideal para quien desea una visión amplia de su momento vital.</div>
+        <div class="lectura-price">$60.000</div>
+      </div>
+
+      <div class="lectura-card reveal" style="grid-column: 1 / -1; max-width: 100%;">
+        <div class="lectura-badge">Lectura completa</div>
+        <div class="lectura-name">Tirada de los 12 signos / 12 casas astrales</div>
+        <div class="lectura-desc">Una carta por cada casa astral o signo del zodiaco. Una lectura amplia de tu energía y de los distintos aspectos de tu vida. Es la sesión más completa que ofrezco.</div>
+        <div class="lectura-price">$120.000</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="modalidades">
+  <div class="section-inner">
+    <p class="section-label reveal">Cómo nos encontramos</p>
+    <h2 class="reveal">Modalidades <em>de atención</em></h2>
+    <div class="modalidades-grid">
+      <div class="modalidad-box reveal">
+        <div class="modalidad-num">01</div>
+        <h3>Virtual</h3>
+        <p>Nos encontramos por videollamada desde donde estés. Ideal si estás en otra ciudad o si prefieres la intimidad de tu propio espacio.</p>
+      </div>
+      <div class="modalidad-box reveal">
+        <div class="modalidad-num">02</div>
+        <h3>Presencial</h3>
+        <p>Una experiencia más cercana para quienes valoran el encuentro cara a cara. Coordinamos lugar, fecha y hora de forma personalizada en Bogotá y alrededores.</p>
+      </div>
+    </div>
+    <div class="agenda-box reveal">
+      <p><strong>¿Cómo agendo?</strong><br>Reserva tu espacio directamente en mi calendario. Allí podrás ver disponibilidad, elegir el horario que mejor te funcione y confirmar tu sesión.</p>
+    </div>
+  </div>
+</section>
+
+<section id="para-quien">
+  <div class="section-inner">
+    <p class="section-label reveal">¿Esto es para ti?</p>
+    <h2 class="reveal">Para quienes buscan<br><em>verdad y movimiento</em></h2>
+    <ul class="para-quien-list">
+      <li class="reveal">Para quienes sienten que algo en su vida pide dirección y claridad.</li>
+      <li class="reveal">Para quienes están en medio de una decisión importante y quieren una perspectiva más amplia.</li>
+      <li class="reveal">Para quienes no le temen a verse con honestidad y están dispuestas a tomar acción.</li>
+      <li class="reveal">Para quienes creen que conocerse mejor es la base de cualquier cambio real.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="section-inner">
+    <p class="section-label reveal">Preguntas frecuentes</p>
+    <h2 class="reveal">Todo lo que<br><em>quieres saber</em></h2>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿La lectura es virtual o presencial?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Ofrezco ambas modalidades. Virtual por videollamada, desde cualquier lugar. Presencial en Bogotá y alrededores, coordinando previamente el lugar y el horario.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Cómo agendo mi sesión?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Puedes reservar directamente desde mi calendario. Elige la lectura que te interesa, selecciona un horario disponible y confirma tu espacio.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Para qué me puede servir una lectura?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Una lectura puede darte claridad sobre una situación estancada, ayudarte a mirar con más perspectiva una decisión importante o abrir un espacio de reflexión sobre quién eres y hacia dónde quieres dirigirte. No reemplaza un proceso terapéutico o de salud mental, pero sí puede acompañar tu camino de autoconocimiento.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          ¿Necesito experiencia previa con el tarot?
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">No. Mis lecturas están pensadas tanto para personas que ya conocen el tarot como para quienes se acercan por primera vez. Solo necesitas una pregunta, una intención o el deseo de escucharte con más profundidad.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="cta-deco">Ket</div>
+  <div class="section-inner">
+    <p class="section-label reveal" style="justify-content: center;"><span></span>Tu momento<span></span></p>
+    <h2 class="reveal">¿Lista para<br><em>leer tu historia?</em></h2>
+    <p class="reveal">Tu lectura te espera: un espacio íntimo, honesto y diseñado para ti. Porque la claridad a veces necesita un momento para ser escuchada.</p>
+    <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" class="btn-primary reveal" target="_blank" rel="noopener noreferrer" style="display: inline-block;">Reserva tu espacio</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Ket | tarotista de desarrollo personal</div>
+  <div style="margin-top: 0.8rem;">
+    <a href="https://calendar.app.google/7tiiTgk6fCRhQJtx5" target="_blank" rel="noopener noreferrer">Reservas</a>
+    <span class="footer-sep">·</span>
+    <a href="https://www.instagram.com/_ket._.ket_/?hl=es" target="_blank" rel="noopener noreferrer">Instagram</a>
+  </div>
+  <div style="margin-top: 1rem; font-size: 0.72rem; opacity: 0.4;">
+    © 2026 Ket · Lecturas de tarot para el crecimiento personal
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+    document.getElementById('overlay').classList.toggle('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;
+    observer.observe(el);
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + 100;
+    sections.forEach(sec => {
+      if (y >= sec.offsetTop && y < sec.offsetTop + sec.offsetHeight) {
+        document.querySelectorAll('.nav-links a').forEach(a => {
+          a.style.color = '';
+          if (a.getAttribute('href') === '#' + sec.id) a.style.color = 'var(--gold)';
+        });
+      }
+    });
+  });
+</script>
+</body>
+</html>
